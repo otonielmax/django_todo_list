@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!--<link rel="icon" href="favicon.ico">-->
+
+        <title>{% block title %}To Do List{% endblock %}</title>
+
+        {# Cargamos la librería #}
+        {% load bootstrap4 %}
+
+        {# CSS Bootstrap #}
+        {% bootstrap_css %}
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+
+        {# JS y jQuery Bootstrap #}
+	    {% bootstrap_javascript jquery='full' %}
+    </body>
+</html>

@@ -14,12 +14,18 @@ SECRET_KEY = 'l9j(lf6nb!kcz86jjqa#p=&(z_qk2pvwmx50h)=768@9gqp*@^'
 # Application definition
 
 INSTALLED_APPS = [
+    # Apps Base Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Apps Ext
+    'bootstrap4',
+    # Apps Created
+    'apps.main',
+    'apps.profiles'
 ]
 
 MIDDLEWARE = [
@@ -37,7 +43,7 @@ ROOT_URLCONF = 'todo_list.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,7 +80,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 
@@ -83,3 +89,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Redirect success login
+LOGIN_REDIRECT_URL = 'todo_list'
+
+LOGOUT_REDIRECT_URL = 'login'
